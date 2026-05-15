@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AQALY Assessment of Pig Castration Alternatives in Belgium</title>
+<style>
+  :root {
+    --teal: #88a8a8;
+    --olive: #889880;
+    --pink: #c890a0;
+    --burgundy: #744c5b;
+    --text: #36453e;
+    --muted: #6a7a72;
+    --grid: #dddddd;
+    --bg: #fafaf8;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.55;
+    padding: 2rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 2.2rem 0 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--teal);
+  }
+  p, li {
+    font-size: 0.92rem;
+    margin-bottom: 0.6rem;
+  }
+  ul { padding-left: 1.3rem; margin-bottom: 1rem; }
+  .figure-container {
+    background: var(--card);
+    border: 1px solid var(--grid);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1.2rem 0;
+    text-align: center;
+  }
+  .figure-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  .figure-caption {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.8rem 0 1.2rem;
+    font-size: 0.85rem;
+  }
+  th, td {
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    border-bottom: 1px solid var(--grid);
+  }
+  th {
+    background: var(--teal);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #f4f6f5; }
+  .total-row td {
+    font-weight: 700;
+    border-top: 2px solid var(--text);
+    border-bottom: none;
+  }
+  .grade-change {
+    color: var(--burgundy);
+    font-weight: 600;
+  }
+  .grade-improve {
+    color: #4a7a5a;
+    font-weight: 600;
+  }
+  .note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0.5rem 0 1rem;
+  }
+  .method-label {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 0.3rem;
+  }
+  .ml-ic { background: var(--teal); }
+  .ml-em { background: var(--olive); }
+  .ml-scp { background: var(--pink); color: var(--text); }
+  .ml-scm { background: var(--burgundy); }
+  .ref-tag {
+    font-size: 0.75rem;
+    color: var(--muted);
+    vertical-align: super;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--grid);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 0.35rem 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>AQALY Assessment of Pig Castration Alternatives in Belgium</h1>
+<p class="subtitle">Preliminary methodology and results &mdash; Carpenter &amp; Kanepajs, May 2026</p>
+
+<p>We apply the AQALY-4PD framework (Espinosa, Browning &amp; Treich, 2025) to compare four castration methods for male pigs in Belgian conventional confinement, using coefficients from the merged sample (Table A2, N&nbsp;=&nbsp;1,062). The baseline is a castrated pig under current Belgian conditions (N&nbsp;=&nbsp;5, E&nbsp;=&nbsp;9, H&nbsp;=&nbsp;7, B&nbsp;=&nbsp;8), assessed over the 200&#8209;day fattening period.</p>
+
+<p>Four methods compared:
+  <span class="method-label ml-ic">IC</span> immunocastration,
+  <span class="method-label ml-em">EM</span> entire males (no castration),
+  <span class="method-label ml-scp">SC+</span> surgical castration with anaesthesia,
+  <span class="method-label ml-scm">SC&minus;</span> surgical castration without anaesthesia.
+</p>
+
+
+<h2>1. Interpolation method: PCHIP vs linear</h2>
+
+<p>Table A2 provides coefficients at five measured grades (1, 3, 5, 7, 9). Intermediate grades are obtained by interpolation. Because much of the pig's life is spent at grades 7&ndash;9, the interpolation method matters. We use PCHIP (Piecewise Cubic Hermite Interpolating Polynomial) instead of linear interpolation to preserve the concavity visible in the measured data, particularly the steep drop between grades 7 and 9 in Health and Behavioural Interactions.</p>
+
+<div class="figure-container">
+  <img src="fig_interpolation_lines.png" alt="Welfare coefficients by grade: PCHIP vs linear interpolation across four domains">
+  <p class="figure-caption"><strong>Figure 1.</strong> AQALY welfare coefficients across all nine grades for each domain. Solid lines: linear interpolation (Espinosa et al. default). Dashed lines: PCHIP (this study). Both coincide at the five measured grades (1, 3, 5, 7, 9) and diverge at even grades. The largest gap is at grade 8, where the linear method overshoots relative to the data's curvature.</p>
+</div>
+
+<div class="figure-container">
+  <img src="fig_interpolation_bars.png" alt="Lifetime AQALY by interpolation approach and castration method">
+  <p class="figure-caption"><strong>Figure 2.</strong> Lifetime AQALY scores (200-day fattening period) under linear and PCHIP interpolation. Rankings are preserved: IC &gt; EM &gt; SC+ &gt; SC&minus; under both methods. Linear interpolation produces scores that are 0.024&ndash;0.036 AQALY more negative, because it overshoots at grade 8 where the data curves. The relative differences between methods are broadly similar.</p>
+</div>
+
+
+<h2>2. Life stages and welfare domain grades</h2>
+
+<p>We identify seven welfare states that a pig may pass through during the 200-day fattening period, depending on the castration method used. Each state is characterised by grades across four domains: Nutrition (N), Environment (E), Health (H), and Behavioural Interactions (B). Grade 1 is the best attainable welfare; grade 9 is the worst.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Life stage</th>
+      <th>N</th>
+      <th>E</th>
+      <th>H</th>
+      <th>B</th>
+      <th>AQALY/yr</th>
+      <th>Applies to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Baseline</strong><br><span style="font-size:0.78rem;color:var(--muted)">Castrated pig, conventional confinement</span></td>
+      <td>5</td>
+      <td>9</td>
+      <td>7</td>
+      <td>8</td>
+      <td>&minus;0.747</td>
+      <td>SC+/SC&minus; post-acute; IC post-V2</td>
+    </tr>
+    <tr>
+      <td><strong>SC&minus; acute pain</strong><br><span style="font-size:0.78rem;color:var(--muted)">Surgical wound without pain relief</span></td>
+      <td>5</td>
+      <td>9</td>
+      <td class="grade-change">8 &uarr;</td>
+      <td class="grade-change">9 &uarr;</td>
+      <td>&minus;1.280</td>
+      <td>SC&minus; (5 days)</td>
+    </tr>
+    <tr>
+      <td><strong>SC+ acute pain</strong><br><span style="font-size:0.78rem;color:var(--muted)">Surgical wound with anaesthesia</span></td>
+      <td>5</td>
+      <td>9</td>
+      <td class="grade-change">8 &uarr;</td>
+      <td>8</td>
+      <td>&minus;0.960</td>
+      <td>SC+ (5 days)</td>
+    </tr>
+    <tr>
+      <td><strong>Pre-pubertal intact</strong><br><span style="font-size:0.78rem;color:var(--muted)">Uncastrated, exploratory, playful</span></td>
+      <td>5</td>
+      <td>9</td>
+      <td>7</td>
+      <td class="grade-improve">7 &darr;</td>
+      <td>&minus;0.557</td>
+      <td>IC, EM (120 days)</td>
+    </tr>
+    <tr>
+      <td><strong>Post-pubertal aggression</strong><br><span style="font-size:0.78rem;color:var(--muted)">Intact, fighting, skin lesions</span></td>
+      <td>5</td>
+      <td>9</td>
+      <td class="grade-change">8 &uarr;</td>
+      <td>8</td>
+      <td>&minus;0.960</td>
+      <td>IC (53 d), EM (80 d)</td>
+    </tr>
+    <tr>
+      <td><strong>Vaccination</strong><br><span style="font-size:0.78rem;color:var(--muted)">Brief injection stress, transient</span></td>
+      <td>5</td>
+      <td>9</td>
+      <td>7</td>
+      <td>8</td>
+      <td>&minus;0.747</td>
+      <td>IC (2 days)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="note">Arrows indicate grade changes relative to baseline. <span class="grade-change">&uarr; = worsening (higher grade)</span>; <span class="grade-improve">&darr; = improving (lower grade)</span>. Only domains that differ from baseline are highlighted.</p>
+
+
+<h2>3. Assessment: SC+ (surgical castration with anaesthesia)</h2>
+
+<p>SC+ is Belgium's current legal requirement and serves as our reference method. Pigs undergo surgical castration with pain relief in the first days of life, experience a brief acute pain period (Health worsens to grade 8 due to the wound), then spend the remainder of the fattening period at baseline.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>Life stage</th>
+      <th>Duration (days)</th>
+      <th>AQALY/yr</th>
+      <th>Segment AQALY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acute pain</td>
+      <td>SC+ acute</td>
+      <td>5</td>
+      <td>&minus;0.960</td>
+      <td>&minus;0.01313</td>
+    </tr>
+    <tr>
+      <td>Post-castration</td>
+      <td>Baseline</td>
+      <td>195</td>
+      <td>&minus;0.747</td>
+      <td>&minus;0.39904</td>
+    </tr>
+    <tr class="total-row">
+      <td>Total</td>
+      <td></td>
+      <td>200</td>
+      <td></td>
+      <td>&minus;0.41217</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>4. Assessment: IC (immunocastration)</h2>
+
+<p>Immunocastrated pigs remain intact until two vaccinations suppress gonadal hormones. During the pre-pubertal phase (120 days), intact pigs benefit from greater exploratory behaviour and play (Behavioural Interactions improves from grade 8 to 7). After puberty, intact pigs experience increased aggression (Health worsens to grade 8) until the second vaccination takes effect, after which they revert to the castrate baseline.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>Life stage</th>
+      <th>Duration (days)</th>
+      <th>AQALY/yr</th>
+      <th>Segment AQALY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pre-pubertal</td>
+      <td>Pre-pubertal intact</td>
+      <td>120</td>
+      <td>&minus;0.557</td>
+      <td>&minus;0.18290</td>
+    </tr>
+    <tr>
+      <td>Vaccination</td>
+      <td>Baseline</td>
+      <td>2</td>
+      <td>&minus;0.747</td>
+      <td>&minus;0.00409</td>
+    </tr>
+    <tr>
+      <td>Post-pubertal</td>
+      <td>Post-pubertal aggression</td>
+      <td>53</td>
+      <td>&minus;0.960</td>
+      <td>&minus;0.13926</td>
+    </tr>
+    <tr>
+      <td>Post-V2 transition</td>
+      <td>Baseline</td>
+      <td>25</td>
+      <td>&minus;0.747</td>
+      <td>&minus;0.05116</td>
+    </tr>
+    <tr class="total-row">
+      <td>Total</td>
+      <td></td>
+      <td>200</td>
+      <td></td>
+      <td>&minus;0.37742</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>IC yields a lifetime AQALY of &minus;0.377 vs &minus;0.412 for SC+: a welfare gain of +0.035 AQALY over the 200-day period, driven primarily by the 120-day pre-pubertal behavioural benefit.</p>
+
+
+<footer>
+  <p>Preliminary results, May 2026. Scoring will be validated with a veterinary expert. Framework: Espinosa, Browning &amp; Treich (2025), <em>The Animal Quality-Adjusted Life Year</em>, SSRN&nbsp;5255360. Coefficients: merged sample (Table A2, N&nbsp;=&nbsp;1,062), PCHIP-interpolated at even grades.</p>
+</footer>
+
+</body>
+</html>
